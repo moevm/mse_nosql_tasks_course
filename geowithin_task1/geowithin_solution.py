@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pymongo import MongoClient, GEOSPHERE
 import json
 
@@ -11,4 +13,5 @@ result = list(db.places.find({'geometry':
                             }
                      ))
 
-open('correct_answer', 'w').write(str(len(result)/len(list(db.places.find()))))
+open('correct_answer', 'w').write(str(len(result)))
+client.drop_database('sw_db')

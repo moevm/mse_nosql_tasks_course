@@ -1,6 +1,3 @@
-def test_connection(s):
-    assert s.run('true').succeeded, "Could not connect to server"
-
 def test_file_exists(s):
     cmd = 'test -f /home/box/answer'
     assert s.run(cmd).succeeded, "File not found"
