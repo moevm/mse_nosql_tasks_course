@@ -19,5 +19,5 @@ result = list(db.places.find({'loc':
     }
 }))
 
-open('correct_answer', 'w').write(str((len(result) / len(list(db.places.find())))))
+open('correct_answer', 'w').write(str((len(result))))
 client.drop_database('nr')
