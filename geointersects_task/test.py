@@ -1,5 +1,4 @@
-def test_connection(s):
-    assert s.run('true').succeeded, "Could not connect to server"
+#!/usr/bin/python3
 
 def test_file_exists(s):
     cmd = 'test -f /home/box/answer'
