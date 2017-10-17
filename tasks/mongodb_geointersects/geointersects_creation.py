@@ -6,7 +6,7 @@ import random
 client = MongoClient()
 db = client.sw_db
 
-#удаляем все объекты из БД
+#delete all from DB
 client.drop_database('sw_db')
 db.places.create_index([('geometry', GEOSPHERE)])
 
@@ -24,18 +24,17 @@ idd = it[0]["_id"]
 print(idd)'''
 
 
-ans = {"type": "Feature",	#создаем многоугольник, к-й является ответом
+ans = {"type": "Feature",	# create a polygon that is an answer
       "properties": {},
       "geometry": 
          {
         "type": "Polygon",
         "coordinates": [
-          [		  #эта точка лежит внутри нашего участка:
+          [		  #this point is inside our polygon:
             [94.658203125,66.73990169639414 ],
             [random.uniform(96,98),random.uniform(66,67)],
             [random.uniform(97,101),random.uniform(65,66)],
             [random.uniform(94,97),random.uniform(65,66)],
-		#она же:
             [94.658203125,66.73990169639414]
           ]
         ]
@@ -43,17 +42,16 @@ ans = {"type": "Feature",	#создаем многоугольник, к-й является ответом
 }
 db.places.insert_one(ans)
 
-#правильный ответ кладем в correct_answer
+#put an answer to correct_answer
 result = db.places.find(ans)
-#записываем в файл только координаты результата (округляя до 2 знаков после , )
-#outfile = open('/home/milana/Documents/correct_answer', 'w')
+#write to file only coords of a result (round to 2 digits)
 outfile = open('correct_answer', 'w')
-count = True	#для красивого вывода 
+count = True	
 for x in result:	
-    for i in range(5):		#всего 5 вершин
+    for i in range(5):		#5 vertices
         outfile.write('[')
         count = True
-        for j in range(2):	#две координаты
+        for j in range(2):	#2 coords
             rou = x["geometry"]["coordinates"][0][i][j]
             outfile.write(str(round(rou, 2)))
             if count:
@@ -63,17 +61,9 @@ for x in result:
 
 outfile.close()
 
-#записываем в файл id ответа (для проверки) !!! Как получить первую запись в коллекции?
-outfile = open('ans_id', 'w')
-for_id = db.places.find(ans)
-for x in for_id:
-    outfile.write(str(x["_id"]))
-outfile.close()
-
-
 for i in range(10):
-    beginX = random.uniform(62, 74)	#первая и последняя точка
-    beginY = random.uniform(61, 66)	#чтобы замкнуть фигуру
+    beginX = random.uniform(62, 74)	#first and last point
+    beginY = random.uniform(61, 66)	
     doc =  {"type": "Feature",
       "properties": {},
       "geometry": {
