@@ -1,7 +1,6 @@
-#!/usr/bin/python3
-
 from pymongo import MongoClient, GEOSPHERE
 import json
+
 
 client = MongoClient()
 db = client.sw_db
@@ -14,16 +13,19 @@ query = {'geometry':
 
 result = db.places.find(query)
 
-#Р·Р°РїРёСЃС‹РІР°РµРј РІ С„Р°Р№Р» С‚РѕР»СЊРєРѕ РєРѕРѕСЂРґРёРЅР°С‚С‹ СЂРµР·СѓР»СЊС‚Р°С‚Р° (РѕРєСЂСѓРіР»СЏСЏ РґРѕ 2 Р·РЅР°РєРѕРІ РїРѕСЃР»Рµ , )
+#записываем в файл только координаты результата (округлЯЯ до 2 знаков после , )
 outfile = open('correct_answer', 'w')
-for x in result:		
-    for i in range(5):		#РІСЃРµРіРѕ 5 РІРµСЂС€РёРЅ
+for x in result:	
+    for i in range(5):		#всего 5 вершин
         outfile.write('[')
-        for j in range(2):	#РґРІРµ РєРѕРѕСЂРґРёРЅР°С‚С‹
+        count = True
+        for j in range(2):	#две координаты
             rou = x["geometry"]["coordinates"][0][i][j]
             outfile.write(str(round(rou, 2)))
-            outfile.write(', ')
-        outfile.write('], ')
+            if count:
+                outfile.write(', ')
+            count = False
+        outfile.write('] ')
 
 outfile.close()
 
