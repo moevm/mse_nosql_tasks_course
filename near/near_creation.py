@@ -9,5 +9,6 @@ client = MongoClient()
 db = client.nr
 db.places.create_index([('loc', GEOSPHERE)])
 
-for item in xy:
-    db.places.insert_one({'loc': {'type' : 'Point','coordinates' : item.tolist() }})
+justalist = [{'loc': {'type' : 'Point','coordinates' : item.tolist() }} for item in xy]
+
+db.places.insert_many(justalist)
