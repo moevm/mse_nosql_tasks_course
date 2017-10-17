@@ -1,8 +1,11 @@
 from pymongo import MongoClient, GEOSPHERE
+import numpy as np
 import json
+import random
 
 client = MongoClient()
 db = client.sw_db
 db.places.create_index([('geometry', GEOSPHERE)])
-lasers = json.load(open('lasers.json', 'r'))
-db.places.insert_many(lasers)
+lasers = np.array(json.load(open('lasers.json', 'r')))
+indicies = random.sample(range(103), 75)
+db.places.insert_many(lasers[indicies].tolist())

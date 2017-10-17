@@ -4,7 +4,7 @@ def test_file_exists(s):
 
 
 def test_file_content(s):
-    correct_answer = '-73.966509 40.78132 0.349515'
+    correct_answer = '30'
     user_answer = s.run('cat /home/box/answer')
 
     assert user_answer == correct_answer, "Ваш ответ не совпадает с правильным."
