@@ -1,7 +1,8 @@
+#!/usr/bin/python3
+
 from pymongo import MongoClient, GEOSPHERE
 import json
 import random
-
 
 client = MongoClient()
 db = client.sw_db
@@ -9,20 +10,6 @@ db = client.sw_db
 #delete all from DB
 client.drop_database('sw_db')
 db.places.create_index([('geometry', GEOSPHERE)])
-
-
-#наш участок. Надо ли его добавлять в бд? - он пересекается сам с собой
-'''initial = {"type": "Feature",
-      "properties": {},
-      "geometry": 
-         json.loads(open("test_polygon.json", "r").read())
-      
-    }
-db.places.insert_one(initial)
-it = db.places.find(initial)
-idd = it[0]["_id"]
-print(idd)'''
-
 
 ans = {"type": "Feature",	# create a polygon that is an answer
       "properties": {},
@@ -44,6 +31,7 @@ db.places.insert_one(ans)
 
 #put an answer to correct_answer
 result = db.places.find(ans)
+
 #write to file only coords of a result (round to 2 digits)
 outfile = open('correct_answer', 'w')
 count = True	
@@ -60,6 +48,7 @@ for x in result:
         outfile.write('] ')
 
 outfile.close()
+
 
 for i in range(10):
     beginX = random.uniform(62, 74)	#first and last point

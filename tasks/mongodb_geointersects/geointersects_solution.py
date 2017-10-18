@@ -1,6 +1,7 @@
+#!/usr/bin/python3
+
 from pymongo import MongoClient, GEOSPHERE
 import json
-
 
 client = MongoClient()
 db = client.sw_db
@@ -13,13 +14,13 @@ query = {'geometry':
 
 result = db.places.find(query)
 
-#записываем в файл только координаты результата (округляя до 2 знаков после , )
+#write to file only coords of a result (round to 2 digits)
 outfile = open('correct_answer', 'w')
 for x in result:	
-    for i in range(5):		#всего 5 вершин
+    for i in range(5):		#5 vertices
         outfile.write('[')
         count = True
-        for j in range(2):	#две координаты
+        for j in range(2):	#2 coords
             rou = x["geometry"]["coordinates"][0][i][j]
             outfile.write(str(round(rou, 2)))
             if count:
