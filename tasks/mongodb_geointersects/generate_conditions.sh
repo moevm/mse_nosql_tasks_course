@@ -1,6 +1,6 @@
 #!/bin/bash
 
-key="KEY"
+key="esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
 
 python3 /home/box/repo/geointersects_creation.py
 
