@@ -46,7 +46,7 @@ cd ./repo
 
 # Here will be task initialization
 
- ./scripts/setup_one_time_autorun_scripts.sh ./tasks/task1/generate_conditions.sh "esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
+ ./scripts/init_task.sh "near" "esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
 # /Insert your task setup here
 
 # Keys and repo cleanup
