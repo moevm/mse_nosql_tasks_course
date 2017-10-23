@@ -46,7 +46,7 @@ cd ./repo
 
 # Here will be task initialization
 
- ./scripts/setup_one_time_autorun_scripts.sh ./tasks/mongodb_geointersects/generate_conditions.sh "esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
+ ./scripts/init_task.sh "geointersects" "esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
 # /Insert your task setup here
 
 # Keys and repo cleanup

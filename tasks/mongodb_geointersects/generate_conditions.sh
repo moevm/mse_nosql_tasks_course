@@ -2,7 +2,7 @@
 
 key="esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
 
-python3 /home/box/repo/geointersects_creation.py
+python3 geointersects_creation.py
 
 cd /home/box/
 echo ${key} | gpg --no-tty --passphrase-fd 0 -c /home/box/correct_answer
