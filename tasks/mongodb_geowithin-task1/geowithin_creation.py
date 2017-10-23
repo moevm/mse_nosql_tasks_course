@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pymongo import MongoClient, GEOSPHERE
 import numpy as np
 import json
