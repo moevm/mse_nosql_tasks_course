@@ -1,5 +1,4 @@
-# This is a sample Linux Challenge test scenario
-# Learn more: https://stepik.org/lesson/9180
+# -*- coding: utf-8 -*-
 
 def test_file_exists(s):
     cmd = 'test -f /home/box/answer'
