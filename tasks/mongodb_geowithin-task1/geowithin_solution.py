@@ -13,4 +13,4 @@ result = db.places.find({'geometry':
                         }).count()
 
 open('correct_answer', 'w').write(str(result))
-client.drop_database('sw_db')
+#client.drop_database('sw_db')
