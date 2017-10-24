@@ -38,9 +38,13 @@ chmod 644 .ssh/id_rsa.pub
 ssh-keyscan github.com >> .ssh/known_hosts
 
 cd /home/box/
-git clone git@github.com:moevm/mse_nosql_tasks_course_solutions.git repo
+#git clone git@github.com:moevm/mse_nosql_tasks_course_solutions.git solution
+#cd ./solution
+#git checkout geowithin-task1
+#cd ..
 git clone git@github.com:moevm/mse_nosql_tasks_course.git repo
 cd ./repo
+git checkout geowithin
 # /Machine setting up
 
 # Insert your task setup here

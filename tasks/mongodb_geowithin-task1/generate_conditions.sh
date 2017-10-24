@@ -4,7 +4,6 @@ key="esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
 
 cd /home/box/repo/tasks/mongodb_geowithin-task1/
 python3 geowithin_creation.py
-cd /home/box/repo/geowithin-task1/
 python3 geowithin_solution.py
 
 mv correct_answer /home/box/
