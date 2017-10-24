@@ -33,7 +33,7 @@ db.places.insert_one(ans)
 result = db.places.find(ans)
 
 #write to file only coords of a result (round to 2 digits)
-outfile = open('correct_answer', 'w')
+outfile = open('/home/box/correct_answer', 'w')
 count = True	
 for x in result:	
     for i in range(5):		#5 vertices
