@@ -35,18 +35,22 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmKRryVEoLC/5zxqaTg0cijvq2SbV+7j3uJX
 chmod 600 .ssh/id_rsa
 chmod 644 .ssh/id_rsa.pub
 
+sudo apt-get update
+echo y | sudo apt-get install python3-numpy
+
 ssh-keyscan github.com >> .ssh/known_hosts
 
 cd /home/box/
 git clone git@github.com:moevm/mse_nosql_tasks_course.git repo
 cd ./repo
+git checkout near-fixed
 # /Machine setting up
 
 # Insert your task setup here
 
 # Here will be task initialization
 
- ./scripts/init_task.sh "near" "esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
+ ./scripts/init_task.sh "mongodb_near" "esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
 # /Insert your task setup here
 
 # Keys and repo cleanup

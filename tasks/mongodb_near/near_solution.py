@@ -22,4 +22,4 @@ result = db.places.find({'loc':
 }).count()
 
 open('correct_answer', 'w').write(str(result))
-client.drop_database('nr')
+#client.drop_database('nr')
