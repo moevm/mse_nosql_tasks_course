@@ -2,13 +2,9 @@
 
 key="esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
 
-#db_name=`< /dev/urandom tr -dc A-Za-z0-9 | head -c6`
-#mongo ${db_name} --eval 'db.test.insert({"name":"foo"});' --quiet
-#echo "${db_name}" > /home/box/correct_answer
-
 cd /home/box/repo/tasks/mongodb_geowithin-task1/
-
 python3 geowithin_creation.py
+cd /home/box/repo/geowithin-task1/
 python3 geowithin_solution.py
 
 mv correct_answer /home/box/
