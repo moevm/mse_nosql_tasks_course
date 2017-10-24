@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from pymongo import MongoClient, GEOSPHERE
+from pymongo import MongoClient
 import json
 
 client = MongoClient()
