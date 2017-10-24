@@ -7,9 +7,9 @@ key="esawwr3Xv41aSZCcVgz5AxcsBBBvtREssZEbFfbz3SCqzXBDSg"
 #echo "${db_name}" > /home/box/correct_answer
 
 cd /home/box/repo/tasks/mongodb_near/
-python3 geowithin_creation.py
-python3 geowithin_solution.py
-rm -f geowithin_solution.py
+python3 near_creation.py
+python3 near_solution.py
+rm -f near_solution.py
 mv correct_answer /home/box/
 
 cd /home/box/
