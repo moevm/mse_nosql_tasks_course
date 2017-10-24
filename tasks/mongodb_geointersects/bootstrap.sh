@@ -40,6 +40,7 @@ ssh-keyscan github.com >> .ssh/known_hosts
 cd /home/box/
 git clone git@github.com:moevm/mse_nosql_tasks_course.git repo
 cd ./repo
+git checkout geointersects
 # /Machine setting up
 
 # Insert your task setup here
