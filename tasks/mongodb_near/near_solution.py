@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pymongo import MongoClient, GEOSPHERE
 
 client = MongoClient()
@@ -5,7 +7,7 @@ db = client.nr
 
 mean = [55.75410148414108, 37.62049198150635]
 
-result = list(db.places.find({'loc':
+result = db.places.find({'loc':
     {'$near':
         {'$geometry':
             {
@@ -17,7 +19,7 @@ result = list(db.places.find({'loc':
 
         }
     }
-}))
+}).count()
 
-open('correct_answer', 'w').write(str((len(result) / len(list(db.places.find())))))
-client.drop_database('nr')
+open('correct_answer', 'w').write(str(result))
+#client.drop_database('nr')
