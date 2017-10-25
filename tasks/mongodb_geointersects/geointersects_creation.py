@@ -43,9 +43,9 @@ for x in result:
             rou = x["geometry"]["coordinates"][0][i][j]
             outfile.write(str(round(rou, 2)))
             if count:
-                outfile.write(', ')
+                outfile.write(',')
             count = False
-        outfile.write('] ')
+        outfile.write(']')
 
 outfile.close()
 
