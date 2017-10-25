@@ -32,21 +32,11 @@ db.places.insert_one(ans)
 #put an answer to correct_answer
 result = db.places.find(ans)
 
-#write to file only coords of a result (round to 2 digits)
+#write to file only Id of a result
 outfile = open('correct_answer', 'w')
-count = True	
-for x in result:	
-    for i in range(5):		#5 vertices
-        outfile.write('[')
-        count = True
-        for j in range(2):	#2 coords
-            rou = x["geometry"]["coordinates"][0][i][j]
-            outfile.write(str(round(rou, 2)))
-            if count:
-                outfile.write(',')
-            count = False
-        outfile.write(']')
 
+for x in result:
+    outfile.write(str(x["_id"]))
 outfile.close()
 
 
