@@ -11,8 +11,8 @@ python3 near_creation.py
 python3 near_solution.py
 rm -f near_solution.py
 mv correct_answer /home/box/
-
 cd /home/box/
+rm -rf repo
 
 echo ${key} | gpg --no-tty --passphrase-fd 0 -c /home/box/correct_answer
 chown box:box /home/box/correct_answer.gpg
