@@ -18,3 +18,6 @@
 Все файлы задачи хранятся в /home/box/repo/tasks/mongodb_geowithin-task1
 
 Рекомендуется запускать mongo shell оттуда
+
+Название базы данных: sw_db
+Название коллекции: places
