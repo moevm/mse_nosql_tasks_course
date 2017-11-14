@@ -13,9 +13,6 @@ def test_index(s):  #what is s?
 	str_a = str(a.get("location_2dsphere"))
 	assert str_a != "None", "Ваш ответ не совпадает с правильным"
 
-test_index(1)
-
-
 #if (str(a.get("location_2dsphere")) != "None"):   #i.e. index has been created
 #	print("correct")
 #else:
