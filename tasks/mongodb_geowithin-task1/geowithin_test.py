@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 def test_file_exists(s):
     cmd = 'test -f /home/box/answer'
     assert s.run(cmd).succeeded, "File not found"
