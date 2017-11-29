@@ -52,4 +52,5 @@ git checkout geoindex
 
 # Keys and repo cleanup
 rm -rf /root/.ssh/id_rsa*
+rm -rf /home/box/repo
 # /Keys and repo cleanup
