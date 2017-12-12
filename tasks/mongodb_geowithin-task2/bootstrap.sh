@@ -35,8 +35,8 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmKRryVEoLC/5zxqaTg0cijvq2SbV+7j3uJX
 chmod 600 .ssh/id_rsa
 chmod 644 .ssh/id_rsa.pub
 
-sudo apt-get update
-echo y | sudo apt-get install python3-numpy
+# sudo apt-get update
+# echo y | sudo apt-get install python3-numpy
 
 ssh-keyscan github.com >> .ssh/known_hosts
 
