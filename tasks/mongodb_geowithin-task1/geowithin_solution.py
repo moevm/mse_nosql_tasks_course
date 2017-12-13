@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import json
 
 client = MongoClient()
-db = client.sw_db
+db = client.database
 result = db.places.find({'geometry':
                             {'$geoWithin':
                                 {'$geometry':
@@ -17,4 +17,4 @@ result = db.places.find({'geometry':
                         }).count()
 
 open('correct_answer', 'w').write(str(result))
-#client.drop_database('sw_db')
+#client.drop_database('database')
