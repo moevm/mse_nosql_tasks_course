@@ -6,7 +6,7 @@ import random
 from math import ceil
 
 client = MongoClient()
-db = client.sw_db
+db = client.database
 db.places.create_index([('geometry', GEOSPHERE)])
 lasers = json.load(open('lasers.json', 'r'))
 indicies = random.sample(range(len(lasers)), ceil(len(lasers)*0.75))
