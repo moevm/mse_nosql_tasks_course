@@ -2,4 +2,4 @@
 
 
 cd /home/box/repo/tasks/mongodb_geoindex/
-python3 geoindex_creation.py
+python3 geoIndex_creation.py
